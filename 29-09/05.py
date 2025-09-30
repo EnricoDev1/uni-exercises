@@ -1,0 +1,22 @@
+import g2d 
+import random 
+
+g2d.init_canvas((500, 500))
+
+n = int(input("Inserisci numero di quadrati da disegnare: "))
+
+for _ in range(n):
+    p = (random.randint(0, 296), random.randint(0, 296))
+    color = (random.randint(0, 255) for _ in range(3))
+
+    dim = (random.randint(100, 199), random.randint(100, 199))
+
+    # ombra 
+    g2d.set_color((59, 59, 59))
+    g2d.draw_rect((p[0] + 5, p[1] + 5), dim)
+
+    # rettangolo 
+    g2d.set_color(color)
+    g2d.draw_rect(p, dim)
+
+g2d.main_loop()

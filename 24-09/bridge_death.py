@@ -6,3 +6,5 @@ if q1 == "Lancelot" and q2 == "Holy Grail" and q3 == "Blue":
     print("Right. Off you go.")
 else:
     print("Down into the Gorge of Ethernal Peril!")
+
+
