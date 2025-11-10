@@ -8,8 +8,8 @@ from random import choice, randrange, uniform
 from lib.actor import Actor, Arena, Point
 import math
 view_x, view_y = 0,0
-ARENA_W, ARENA_H = 600,600
 VIEW_W, VIEW_H = 200, 200
+ARENA_W, ARENA_H = 600,600
 
 class Ball(Actor):
     def __init__(self, pos):
@@ -142,12 +142,12 @@ def tick():
     elif "ArrowLeft" in keys:
         view_x = max(view_x - 10, 0)
 
-    g2d.draw_image("background.png", (0,0), (view_x, view_y), (VIEW_W, VIEW_H))
+    g2d.draw_image("lib/background.png", (0,0), (view_x, view_y), (VIEW_W, VIEW_H))
     
     for a in arena.actors():
         if a.sprite() != None:
             x,y = a.pos()
-            g2d.draw_image("sprites.png", (x-view_x,y-view_y), a.sprite(), a.size())
+            g2d.draw_image("lib/sprites.png", (x-view_x,y-view_y), a.sprite(), a.size())
         else:
             pass  # g2d.draw_rect(a.pos(), a.size())
     
